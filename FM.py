@@ -55,9 +55,6 @@ def FM_by_normalized_8_point(pts1,  pts2):
     # print(F)
     # comment out the above line of code. 
 
-    # Your task is to implement the algorithm by yourself.
-    # Do NOT copy&paste any online implementation. 
-
     # workflow from http://www.cs.cmu.edu/~16385/s17/Slides/12.4_8Point_Algorithm.pdf, page. 18
     # 0. (Normalize points)
     norm_pts1, T1 = normalize(pts1)
@@ -118,16 +115,12 @@ def FM_by_RANSAC(pts1,  pts2):
     # print(F)
     # comment out the above line of code. 
 	
-    # Your task is to implement the algorithm by yourself.
-    # Do NOT copy&paste any online implementation. 
-
     n = 0
     threshold=3
     confidence=0.99
 
     # assume 50% inlier
     M = int(np.log(1 - confidence) / np.log(1 - 0.5 ** 8))
-    # print(M)
 
     N = len(pts1)
 
@@ -215,9 +208,6 @@ for i,(m,n) in enumerate(matches):
 pts1 = np.int32(pts1)
 pts2 = np.int32(pts2)
 
-# img3 = cv2.drawMatches(img1, kp1, img2, kp2, good, None)
-# plt.imshow(cv2.cvtColor(img3, cv2.COLOR_BGR2RGB))
-# plt.show()
 
 F = None
 if args.UseRANSAC:
